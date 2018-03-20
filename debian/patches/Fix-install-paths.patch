@@ -1,0 +1,35 @@
+Description: Fix the installation locations
+
+--- peasoup-0+git20171127.orig/Makefile
++++ peasoup-0+git20171127/Makefile
+@@ -74,6 +74,8 @@ directories:
+ 
+ clean:
+ 	@rm -rf ${OBJ_DIR}/*
++	@rm -rf ${BIN_DIR}/peasoup
+ 
+ install: all
++	@mkdir -p ${INSTALL_DIR}/bin
+ 	cp $(BIN_DIR)/peasoup $(INSTALL_DIR)/bin
+--- peasoup-0+git20171127.orig/Makefile.inc
++++ peasoup-0+git20171127/Makefile.inc
+@@ -1,15 +1,15 @@
+ # This is where common definitions go
+ 
+-INSTALL_DIR = /usr/local
++INSTALL_DIR = $(DESTDIR)/usr
+ 
+ #cuda setup
+-CUDA_DIR   = /usr/local/cuda/
++CUDA_DIR   = /usr
+ 
+ #Thrust 1.7.1 or higher
+-THRUST_DIR = /usr/local/cuda/
++THRUST_DIR = /usr
+ 
+ # dedisp setup
+-DEDISP_DIR = /usr/local/
++DEDISP_DIR = /usr
+ 
+ GCC       = gcc
+ GXX       = g++

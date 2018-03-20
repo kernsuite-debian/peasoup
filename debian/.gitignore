@@ -1,0 +1,5 @@
+peasoup/
+*.debhelper.log
+*.substvars
+files
+

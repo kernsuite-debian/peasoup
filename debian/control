@@ -1,0 +1,13 @@
+Source: peasoup
+Section: science
+Priority: optional
+Maintainer: KERN packaging <packaging@kernsuite.info>
+Build-Depends: debhelper (>=9), nvidia-cuda-toolkit
+Standards-Version: 3.9.8
+Homepage: https://github.com/ewanbarr/peasoup
+
+Package: peasoup
+Architecture: any
+Multi-Arch: foreign
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: C++/CUDA GPU pulsar searching library
